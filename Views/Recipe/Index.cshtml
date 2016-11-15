@@ -1,0 +1,26 @@
+@model System.Collections.Generic.IEnumerable<MYFIRSTAPP.Models.Recipe>
+    <h1>Recipe Details</h1>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RecNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecName)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecName)
+                </td>
+
+            </tr>
+        }
+        </table>
