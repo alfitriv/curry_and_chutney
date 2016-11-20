@@ -14,5 +14,11 @@ namespace MYFIRSTAPP.Controllers
             var Recs = new RecipeDatabase();
             return View(Recs);
         }
+
+        public IActionResult Chutney()
+        {
+            var Recs = new ChutneyRecipesDatabase();
+            return View(Recs);
+        }
     }
 }
