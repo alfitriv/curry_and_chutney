@@ -11,14 +11,13 @@ namespace MYFIRSTAPP.Controllers
     {
         public IActionResult Index()
         {
-            var Recs = new RecipeDatabase();
-            return View(Recs);
-        }
-
-        public IActionResult Chutney()
-        {
-            var Recs = new ChutneyRecipesDatabase();
-            return View(Recs);
+            List<Recipe> recs = new RecipeDatabase();
+            List<Recipe> distinct = 
+                recs
+                .GroupBy(recipe => recipe.Category)
+                .Select(g => g.First())
+                .ToList();
+            return View(distinct);
         }
     }
 }

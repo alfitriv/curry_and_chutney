@@ -4,9 +4,6 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
         </tr>
@@ -14,9 +11,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ID)
-                </td>
                 <td>
                     @Html.ActionLink(item.Category, item.Category)
                 </td>
