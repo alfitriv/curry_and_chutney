@@ -1,0 +1,30 @@
+@model System.Collections.Generic.IEnumerable<MYFIRSTAPP.Models.Recipe>
+
+        <h1>
+        @Html.DisplayNameFor(Model => @Model.First().Category)
+        </h1>
+    
+
+
+    <table class="chutneytable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+        </tr>
+
+     @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "DetailedRecipes", "Recipe", new {@name = item.Name}, null)
+            </td>
+            <td>
+                @Html.ActionLink(item.Category, item.Category)
+            </td>
+        </tr>
+        }
+    </table>

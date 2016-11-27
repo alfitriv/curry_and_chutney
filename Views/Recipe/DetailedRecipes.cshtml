@@ -1,10 +1,13 @@
 @model System.Collections.Generic.IEnumerable<MYFIRSTAPP.Models.Recipe>
-    <h1>Recipe Details</h1>
+
+    <h1>
+        @Html.DisplayNameFor(Model => @Model.First().Name)
+    </h1>
 
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.Ingredients)
             </th>
         </tr>
 
@@ -12,9 +15,10 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(item.Category, "CategorizedRecipes", "Recipe", new {@category = item.Category}, null)
+                    @Html.ActionLink(item.Ingredients, item.Ingredients)
                 </td>
 
             </tr>
         }
         </table>
+
